@@ -1,15 +1,25 @@
 {
   "name": "elysia-template-be",
   "version": "1.0.50",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts --target bun --outdir ./dist",
+    "start": "NODE_ENV=production bun dist/index.js",
+    "test": "bun test"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/swagger": "^1.1.6",
+    "bcrypt": "^5.1.1",
+    "elysia": "latest",
+    "firebase": "^11.1.0",
+    "firebase-admin": "^13.0.2",
+    "pg": "^8.13.1",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "ts-node": "^10.9.2"
   },
   "module": "src/index.js"
 }
